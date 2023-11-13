@@ -1,0 +1,59 @@
+{
+    "name": "sample-nextjs",
+    "author": "Caravel-labs",
+    "version": "0.1.0",
+    "license": "MIT",
+    "private": true,
+    "engines": {
+        "npm": ">=8.0.0 <=9.6.9",
+        "node": ">=14.0.0 <19.0.0"
+    },
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "npm run build && node_modules/next/dist/bin/next start",
+        "lint": "eslint . --ext ts --ext tsx --ext js",
+        "prepare": "husky install",
+        "format": "prettier --write .",
+        "type-check": "tsc --pretty --noEmit"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.10.6",
+        "@emotion/styled": "^11.10.6",
+        "@mui/icons-material": "^5.11.11",
+        "@mui/material": "^5.11.12",
+        "axios": "^1.6.1",
+        "ioredis": "^5.3.2",
+        "mobx": "^6.8.0",
+        "mobx-react-lite": "^3.4.3",
+        "mongodb": "^6.2.0",
+        "next": "13.2.4",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "redis": "^4.6.10",
+        "request-ip": "^3.3.0",
+        "swr": "^2.1.0",
+        "typescript": "4.9.5",
+        "uuid": "^9.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "18.15.0",
+        "@types/react": "18.0.28",
+        "@types/react-dom": "18.0.11",
+        "@types/request-ip": "^0.0.41",
+        "@types/uuid": "9.0.1",
+        "eslint": "8.36.0",
+        "eslint-config-next": "13.2.4",
+        "eslint-config-prettier": "8.7.0",
+        "husky": "^8.0.1",
+        "lint-staged": "13.2.0",
+        "prettier": "2.8.4",
+        "typescript": "4.7.4"
+    },
+    "lint-staged": {
+        "*.{ts,tsx,js}": [
+            "npm run lint",
+            "npm run format"
+        ]
+    }
+}
