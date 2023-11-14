@@ -1,12 +1,11 @@
 
-Local Environment Setup
+# Local Environment Setup
 
 1. docker pull redis
 2. npm install
 3. Update .env.local variable
 4. npm run dev
 
----
 
 # API Documentation
 
