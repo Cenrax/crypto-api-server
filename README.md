@@ -28,7 +28,7 @@ GET /items
         "item": "exampleItem",
         "description": "An example item",
         "quantity": 10,
-        "price": 0.5,
+        "price": 656.8,
         "currency": "ETH"
     },
     // ... other items
@@ -50,8 +50,6 @@ POST /items
     "item": "newItem",
     "description": "A new item",
     "quantity": 20,
-    "price": 1.0,
-    "currency": "ETH"
 }
 ```
 
@@ -70,7 +68,7 @@ Admin-only endpoint to update the quantity of a specific item.
 
 **Request:**
 ```http
-PUT /items/newItem
+PUT /items/[slug]
 ```
 
 **Body:**
@@ -102,10 +100,11 @@ GET /purchase
 ```json
 [
     {
-        "item": "exampleItem",
-        "quantity": 2,
-        "totalPrice": 1.0,
-        "currency": "ETH"
+        "userId": "xxxx-xx-xxx"
+    "itemName": "Laptop"
+    "datePurchased": "DATE ISO format"
+    "quantity": 6
+    "amountPaid": 12455
     },
     // ... other purchases
 ]
@@ -135,17 +134,7 @@ POST /purchase
 }
 ```
 
-## Item Datatype
 
-```typescript
-export interface Item {
-    item: string;
-    description: string;
-    quantity: number;
-    price?: number;
-    currency?: string;
-}
-```
 
 This API is designed to be user-friendly and secure, with certain endpoints restricted to admin access for better control over item management.
 
