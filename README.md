@@ -1,4 +1,10 @@
-Certainly! Below is a sample README.md documentation for the API you described:
+
+Local Environment Setup
+
+1. docker pull redis
+2. npm install
+3. Update .env.local variable
+4. npm run dev
 
 ---
 
