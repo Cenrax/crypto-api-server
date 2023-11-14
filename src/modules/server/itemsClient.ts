@@ -54,10 +54,7 @@ export async function createItem(item: Item) {
     return result
 }
 
-export async function updateItem(
-    item: string,
-    quantity: number,
-) {
+export async function updateItem(item: string, quantity: number) {
     const client = await clientPromise
     const collection = client.db(DB_NAME).collection<Item>('items')
     const result = await collection.findOneAndUpdate(

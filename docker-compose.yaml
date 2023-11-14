@@ -1,0 +1,15 @@
+version: '1'
+services:
+    cache:
+        image: redis
+        container_name: redis-container
+        environment:
+            ALLOW_EMPTY_PASSWORD: 'yes'
+        ports:
+            - '6379:6379'
+
+    crypto-api-server:
+        image: skunduapiacr.azurecr.io/crypto-api-server:v2
+        container_name: crypto-api-server
+        ports:
+            - '80:80'

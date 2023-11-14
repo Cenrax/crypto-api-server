@@ -17,9 +17,8 @@ export default async function handler(
     req: NextApiRequest,
     res: NextApiResponse<any>
 ) {
-
-    const oid:string = req.headers['oid'] as string
-    if(!oid){
+    const oid: string = req.headers['oid'] as string
+    if (!oid) {
         res.status(401).json('Authentication failed')
         return
     }
@@ -53,8 +52,7 @@ export default async function handler(
     }
 
     if (req.method === 'POST') {
-
-        if(oid !== 'admin'){
+        if (oid !== 'admin') {
             res.status(403).json('Forbidden')
             return
         }
@@ -68,6 +66,4 @@ export default async function handler(
             })
         }
     }
-
-    
 }

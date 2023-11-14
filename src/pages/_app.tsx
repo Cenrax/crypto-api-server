@@ -1,10 +1,6 @@
 import type { AppProps } from 'next/app'
 import React from 'react'
 import Head from 'next/head'
-import { ThemeProvider } from '@mui/material/styles'
-
-import theme from '../theme/theme'
-import { CssBaseline } from '@mui/material'
 
 function MyApp(props: AppProps): JSX.Element {
     const { Component, pageProps } = props
@@ -20,10 +16,8 @@ function MyApp(props: AppProps): JSX.Element {
                 />
                 <link rel="preconnect" href="https://fonts.gstatic.com" />
             </Head>
-            <ThemeProvider theme={theme}>
-                <CssBaseline />
-                <Component {...pageProps} />
-            </ThemeProvider>
+
+            <Component {...pageProps} />
         </>
     )
 }

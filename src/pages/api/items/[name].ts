@@ -23,10 +23,7 @@ export default async function handler(
             return
         }
         try {
-            const result = await updateItem(
-                itemName,
-                req.body.quantity,
-            )
+            const result = await updateItem(itemName, req.body.quantity)
             return res.status(200).json(result)
         } catch (e: any) {
             console.log(e)
